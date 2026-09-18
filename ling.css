@@ -1,7 +1,6 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+html, body {
+    margin: 0 !important;
+    padding: 0 !important;
 }
 
 body {
@@ -10,9 +9,12 @@ body {
     font-family: 'Times New Roman', Times, serif;
 }
 
+header, nav, ul {
+    margin: 0 !important;
+}
+
 .center {
     text-align: center;
-    padding-top: 10px;
 }
 
 ul {
@@ -28,7 +30,7 @@ a {
     text-decoration: none;
 }
 
-h1{
+h1 {
     color: rgb(0, 0, 0);
     text-align: center;
 }
