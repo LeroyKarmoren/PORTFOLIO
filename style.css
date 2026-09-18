@@ -1,0 +1,61 @@
+body {
+    color: rgb(253, 253, 253);
+    background: #ff0000;
+    background: radial-gradient(circle, rgba(122, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+    font-family: 'Times New Roman', Times, serif;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    list-style-type: none;
+    align-items: center;
+    padding: 16px;
+}
+
+a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    align-items: end;
+}
+
+header img{
+    width: 200 px;
+    height: 200 px;
+    border-radius: 15%;
+}
+
+.center{
+    text-align: center;
+
+}
+
+h1{
+    color: rgb(0, 0, 0);
+    text-align: center;
+}
+
+h2{
+    color: rgb(89, 89, 89);
+    text-align: center;
+}
+
+footer img{
+    width: 40 px;
+    height: 40 px;
+}
+
+footer{
+    display: flex;
+    justify-content: center;
+}
+
+footer a{
+    text-align: center;
+    margin: 20px;
+}
+
+.copyright{
+    color: rgb(247, 247, 247);
+    text-align: center;
+}

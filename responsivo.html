@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Base Responsiva</title>
+</head>
+
+
+<body>
+    <header>
+        <nav> links </nav>
+    </header>
+
+    <main>
+
+    <section>
+        <source srcset="./img/banner-mobile.avif" media="(max-width: 767px)" type="image/avif">
+        
+        <!-- Celulares grandes / tablets -->
+        <source srcset="./img/banner-tablet.avif" media="(max-width: 1024px)" type="image/avif">
+        
+        <!-- Computador -->
+         <source srcset="./img/banner-desktop.avif" type="image/avif">
+         
+        <!-- Imagem de segurança --> <img src="./img/banner-desktop.jpg" width="1200" height="400" alt="Imagem do restaurante" loading="lazy" decoding="async">
+        </picture>
+
+    </section>
+    </main>
+</body>
+</html>
