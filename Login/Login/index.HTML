@@ -1,34 +1,45 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-    <link rel="stylesheet" href="style.CSS">
+    <link rel="stylesheet" href="login.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        body { visibility: hidden; }
+    </style>
 </head>
 
 <body>
     <div class="center">
-    <h1>Login</h1>
-    <form method="post">
-        <div class="txt_field">
-            <input type="text" required>
-            <label>Username</label>
-        </div>
+        <h1>Login</h1>
 
-        <div class="txt_field">
-            <input type="text" required>
-            <label>Senha</label>
-        </div>
+        <form id="formLogin">
+            <div class="txt_field">
+                <input type="email" id="login" required>
+                <label>E-mail</label>
+            </div>
 
-        <div class="pass"> Esqueceu a Senha?</div>
-        <input type="submit" value="Login">
-        <div class="sigma_link">
-            <a href="#">Não é um Membro? Escreva!</a>
-        </div>
-        <br>
-    </form>
+            <div class="txt_field">
+                <input type="password" id="senha" required>
+                <label>Senha</label>
+            </div>
+
+            <div class="pass">
+                Esqueceu a senha?
+            </div>
+
+            <div class="botoes">
+                <button type="submit" class="btn-conectar">Logar</button>
+            </div>
+
+            <div class="signup_link">
+                <a href="#">Não é membro? Cadastre-se!</a>
+            </div>
+        </form>
     </div>
 
+    <script src="login.js"></script>
 </body>
 </html>

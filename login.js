@@ -6,7 +6,7 @@ const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 async function checarSessao() {
     const { data: { session } } = await supabaseClient.auth.getSession();
     if (session) {
-        window.location.replace("home.html");
+        window.location.replace("portfolio.html");
     } else {
         document.body.style.visibility = "visible";
     }
@@ -28,6 +28,6 @@ document.getElementById('formLogin').addEventListener('submit', async (e) => {
     if (error) {
         alert('Erro ao fazer login: ' + error.message);
     } else {
-        window.location.replace("home.html");
+        window.location.replace("portfolio.html");
     }
 });
