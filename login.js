@@ -3,22 +3,17 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-// 1. Verifica se já está logado ao acessar o link do site
 async function checarSessao() {
     const { data: { session } } = await supabaseClient.auth.getSession();
-    
     if (session) {
-        // Se já tiver logado, manda direto para o home.html
         window.location.replace("home.html");
     } else {
-        // Se não estiver logado, exibe a tela de login
         document.body.style.visibility = "visible";
     }
 }
 
 checarSessao();
 
-// 2. Evento ao clicar em Logar
 document.getElementById('formLogin').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -33,7 +28,6 @@ document.getElementById('formLogin').addEventListener('submit', async (e) => {
     if (error) {
         alert('Erro ao fazer login: ' + error.message);
     } else {
-        // Redireciona obrigatoriamente para home.html após o login correto
         window.location.replace("home.html");
     }
 });

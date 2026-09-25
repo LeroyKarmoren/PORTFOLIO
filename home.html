@@ -7,10 +7,8 @@
     <title>KAREN</title>
     <link rel="icon" href="img/bloodborne.jpg">
 
-    <!-- SDK do Supabase -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
-        /* Oculta a página até confirmar a sessão do usuário */
         body { display: none; }
     </style>
 </head>
@@ -42,10 +40,8 @@
             const { data: { session } } = await supabaseClient.auth.getSession();
 
             if (!session) {
-                // Se NÃO estiver logado, expulsa de volta para o login (index.html)
                 window.location.replace("index.html");
             } else {
-                // Se ESTIVER logado, mostra o conteúdo da página
                 document.body.style.display = "block";
             }
         }
