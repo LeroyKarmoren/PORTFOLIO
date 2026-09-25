@@ -3,6 +3,7 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+// Se já estiver logado, redireciona
 async function checarSessao() {
     try {
         const { data: { session } } = await supabaseClient.auth.getSession();
@@ -10,7 +11,7 @@ async function checarSessao() {
             window.location.replace("portfolio.html");
         }
     } catch (err) {
-        console.error("Erro ao checar sessão:", err);
+        console.error("Erro ao verificar sessão:", err);
     }
 }
 
@@ -28,7 +29,7 @@ document.getElementById('formLogin').addEventListener('submit', async (e) => {
     });
 
     if (error) {
-        alert('Erro ao fazer login: ' + error.message);
+        alert('Erro no login: ' + error.message);
     } else {
         window.location.replace("portfolio.html");
     }
