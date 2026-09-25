@@ -1,21 +1,87 @@
-const SUPABASE_URL = 'https://ijpqshxedkgewdxorwxi.supabase.co';
-const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcHFzaHhlZGtnZXdkeG9yd3hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODgxNzQsImV4cCI6MjEwNTg2NDE3NH0.0gJjTgON2u_SlvCT2o8QP9eozrHKRmAquUscqQDSJH8';
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meu Portfólio</title>
+    
+    <!-- Importação do Supabase JS -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
-const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            display: none; /* Mantém oculto até verificar a autenticação */
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+        .btn-logout {
+            padding: 8px 16px;
+            background-color: #8b0000;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .btn-logout:hover {
+            background-color: #a00000;
+        }
+        main {
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
 
-async function verificarAutenticacao() {
-    const { data: { session } } = await supabaseClient.auth.getSession();
+    <header>
+        <h1>Bem-vindo ao Meu Portfólio</h1>
+        <button class="btn-logout" onclick="logout()">Sair</button>
+    </header>
 
-    if (!session) {
-        window.location.href = "index.html";
-    } else {
-        document.body.style.display = "block";
-    }
-}
+    <main>
+        <section>
+            <h2>Meus Projetos</h2>
+            <p>Conteúdo do portfólio carregado com sucesso após autenticação.</p>
+        </section>
+    </main>
 
-async function logout() {
-    await supabaseClient.auth.signOut();
-    window.location.href = "index.html";
-}
+    <!-- Script de verificação de sessão e logout do Supabase -->
+    <script>
+        const SUPABASE_URL = 'https://ijpqshxedkgewdxorwxi.supabase.co';
+        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcHFzaHhlZGtnZXdkeG9yd3hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODgxNzQsImV4cCI6MjEwNTg2NDE3NH0.0gJjTgON2u_SlvCT2o8QP9eozrHKRmAquUscqQDSJH8';
 
-verificarAutenticacao();
+        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
+
+        async function verificarAutenticacao() {
+            const { data: { session } } = await supabaseClient.auth.getSession();
+
+            if (!session) {
+                window.location.href = "index.html";
+            } else {
+                document.body.style.display = "block";
+            }
+        }
+
+        async function logout() {
+            await supabaseClient.auth.signOut();
+            window.location.href = "index.html";
+        }
+
+        verificarAutenticacao();
+    </script>
+</body>
+</html>
