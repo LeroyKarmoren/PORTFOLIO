@@ -5,81 +5,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-        body {
-            background-color: #121212;
-            color: #ffffff;
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-        }
-        .login-card {
-            background: #1e1e1e;
-            padding: 30px 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            width: 320px;
-            text-align: center;
-        }
-        .login-card h1 {
-            margin-bottom: 20px;
-            color: #ffffff;
-        }
-        .field {
-            margin-bottom: 15px;
-            text-align: left;
-        }
-        .field label {
-            display: block;
-            margin-bottom: 5px;
-            font-size: 14px;
-            color: #aaa;
-        }
-        .field input {
-            width: 100%;
-            padding: 10px;
-            background: #2b2b2b;
-            border: 1px solid #444;
-            color: #fff;
-            border-radius: 5px;
-        }
-        .btn-logar {
-            width: 100%;
-            padding: 10px;
-            background-color: #8b0000;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            font-weight: bold;
-            cursor: pointer;
-            margin-top: 10px;
-        }
-        .btn-logar:hover {
-            background-color: #a00000;
-        }
-    </style>
 </head>
-<body>
+<body style="background-color: #121212 !important; color: #ffffff !important; display: flex !important; justify-content: center !important; align-items: center !important; min-height: 100vh !important; margin: 0 !important; visibility: visible !important; opacity: 1 !important;">
 
-    <div class="login-card">
-        <h1>Login</h1>
+    <div style="background: #1e1e1e; padding: 30px 40px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.5); width: 320px; text-align: center; display: block !important; visibility: visible !important;">
+        <h1 style="margin-bottom: 20px; color: #ffffff; font-family: Arial, sans-serif;">Login</h1>
+        
         <form id="formLogin">
-            <div class="field">
-                <label for="login">E-mail</label>
-                <input type="email" id="login" required>
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label style="display: block; margin-bottom: 5px; font-size: 14px; color: #aaa; font-family: Arial, sans-serif;">E-mail</label>
+                <input type="email" id="login" required style="width: 100%; padding: 10px; background: #2b2b2b; border: 1px solid #444; color: #fff; border-radius: 5px; box-sizing: border-box;">
             </div>
-            <div class="field">
-                <label for="senha">Senha</label>
-                <input type="password" id="senha" required>
+            
+            <div style="margin-bottom: 15px; text-align: left;">
+                <label style="display: block; margin-bottom: 5px; font-size: 14px; color: #aaa; font-family: Arial, sans-serif;">Senha</label>
+                <input type="password" id="senha" required style="width: 100%; padding: 10px; background: #2b2b2b; border: 1px solid #444; color: #fff; border-radius: 5px; box-sizing: border-box;">
             </div>
-            <button type="submit" class="btn-logar">Logar</button>
+            
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #8b0000; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; margin-top: 10px;">Logar</button>
         </form>
     </div>
 
@@ -89,7 +32,6 @@
 
         const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-        // Apenas processa ao submeter o formulário (Sem verificacoes automaticas ao abrir a pagina)
         document.getElementById('formLogin').addEventListener('submit', async (e) => {
             e.preventDefault();
 
