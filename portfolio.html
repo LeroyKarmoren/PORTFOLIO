@@ -30,7 +30,7 @@
         <h1>Karen</h1>
         <h2>A Coisa.</h2>
         <div class="center">
-            <a href="https://www.canva.com/design/DAHBsCheIFc/6chgbl-IpLS83unqBdysVA/edit" target="_blank" rel="noopner noreferrer">
+            <a href="https://www.canva.com/design/DAHBsCheIFc/6chgbl-IpLS83unqBdysVA/edit" target="_blank" rel="noopener noreferrer">
                 <img src="img/Foto Principal.png" width="250">  
             </a>
         </div>
@@ -40,30 +40,29 @@
         <section>
             <div class="center">
             <h3>Sobre mim</h3>
-            <p>Me chamo Karen e tenho 17 anos, estou no 3º série do Ensino Médio no Sesi e fazendo o curdo de Informatica para Internet no Senai.</p>
+            <p>Me chamo Karen e tenho 17 anos, estou na 3ª série do Ensino Médio no Sesi e fazendo o curso de Informática para Internet no Senai.</p>
 
             <h3>Objetivos</h3>
-            <p>Apresentar as atividades desenvolvidas nesse ano de 2025, mostrando assim meus conhecimentos adquiridos e desenvolvidos nesse</p>
-            <p>período. Desenvolver minhas habilidades de autonomia e tomada de decisões, tanto na área pessoal quanto na profissional.</p>
+            <p>Apresentar as atividades desenvolvidas nesse ano, mostrando assim meus conhecimentos adquiridos e desenvolvidos nesse período.</p>
+            <p>Desenvolver minhas habilidades de autonomia e tomada de decisões, tanto na área pessoal quanto na profissional.</p>
 
             <h3>Projetos</h3>
-            <p>Atualmente estou no 3º série do Ensino Médio e cursando Tecnologia da Informação para Internet no Senai. Pretendo chegar na</p>
-            <p>profissão que almejo e goste, tendo um bom salário e me qualificando cada vez mais para me tornar uma boa profissional.</p>
-            <p>Quero começar uma nova rotina diária, foco, esforço e estudar constatemente.</p>
+            <p>Atualmente estou na 3ª série do Ensino Médio e cursando Tecnologia da Informação para Internet no Senai. Pretendo chegar na profissão que almejo e goste, tendo um bom salário e me qualificando cada vez mais para me tornar uma boa profissional.</p>
+            <p>Quero começar uma nova rotina diária, foco, esforço e estudar constantemente.</p>
             </div>
         </section>
     </main>
 
     <footer>
-        <a href="https://signalis.fandom.com/wiki/SIGNALIS_Wiki" target="_blank" rel="noopner noreferrer">
+        <a href="https://signalis.fandom.com/wiki/SIGNALIS_Wiki" target="_blank" rel="noopener noreferrer">
             <img src="./img/Captura de tela 2026-04-17 143133.png" width="95">
             <p>S I G N A L I S</p>
         </a>
-        <a href="https://hsr.hoyoverse.com/pt-pt/home?utm_source=hsrofficialweb&utm_medium=fab&utm_campaign=logo" target="_blank" rel="noopner noreferrer">
+        <a href="https://hsr.hoyoverse.com/pt-pt/home?utm_source=hsrofficialweb&utm_medium=fab&utm_campaign=logo" target="_blank" rel="noopener noreferrer">
             <img src="./img/804bfd285116c91c935176b2b199894d.png" width="175">
             <p>Honkai Star Rail</p>
         </a>
-        <a href="https://zenless.hoyoverse.com/pt-pt/main?utm_source=web&utm_medium=landingpage&utm_campaign=logo" target="_blank" rel="noopner noreferrer">
+        <a href="https://zenless.hoyoverse.com/pt-pt/main?utm_source=web&utm_medium=landingpage&utm_campaign=logo" target="_blank" rel="noopener noreferrer">
             <img src="./img/image copy 3.png" width="60">
             <p>Zenless Zone Zero</p>
         </a>
@@ -74,9 +73,7 @@
         <p>&copy; <span id="year"></span> - Karen - Todos os direitos reservados ©</p>
     </div>
 
-    <script src="./script.js"></script>
-
-    <!-- Verificação de Autenticação -->
+    <!-- Verificação de Autenticação Supabase e Script do Ano -->
     <script>
         const SUPABASE_URL = 'https://ijpqshxedkgewdxorwxi.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcHFzaHhlZGtnZXdkeG9yd3hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODgxNzQsImV4cCI6MjEwNTg2NDE3NH0.0gJjTgON2u_SlvCT2o8QP9eozrHKRmAquUscqQDSJH8';
@@ -90,6 +87,8 @@
                 window.location.replace("index.html");
             } else {
                 document.body.style.display = "block";
+                const yearElement = document.getElementById('year');
+                if (yearElement) yearElement.textContent = new Date().getFullYear();
             }
         }
 
