@@ -1,123 +1,21 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<<<<<<< HEAD:portfolio.html
-    <link rel="stylesheet" href="style.css">
-    <title>KAREN</title>
-    <link rel="icon" href="img/bloodborne.jpg">
+const SUPABASE_URL = 'https://ijpqshxedkgewdxorwxi.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcHFzaHhlZGtnZXdkeG9yd3hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODgxNzQsImV4cCI6MjEwNTg2NDE3NH0.0gJjTgON2u_SlvCT2o8QP9eozrHKRmAquUscqQDSJH8';
 
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <style>
-        body { display: none; }
-    </style>
-</head>
+const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
-<body>
-    <nav>
-        <ul>
-            <li><a href="portfolio.html">Sobre mim</a></li>
-            <li><a href="ppe.html">PPE</a></li>
-            <li><a href="eixos.html">Eixos</a></li>
-            <li><a href="anexos.html">Anexos</a></li>
-            <li><a href="contact.html">Contatos</a></li>
-            <li><button onclick="logout()" style="cursor:pointer; margin-left:10px;">Sair</button></li>
-        </ul>
-    </nav>
+async function verificarAutenticacao() {
+    const { data: { session } } = await supabaseClient.auth.getSession();
 
-    <header>
-        <h1>Karen</h1>
-        <h2>A Coisa.</h2>
-        <div class="center">
-            <a href="https://www.canva.com/design/DAHBsCheIFc/6chgbl-IpLS83unqBdysVA/edit" target="_blank" rel="noopner noreferrer">
-                <img src="img/Foto Principal.png" width="250">  
-            </a>
-        </div>
-    </header>
+    if (!session) {
+        window.location.href = "index.html";
+    } else {
+        document.body.style.display = "block";
+    }
+}
 
-    <main>
-        <section>
-            <div class="center">
-            <h3>Sobre mim</h3>
-            <p>Me chamo Karen e tenho 17 anos, estou no 3º série do Ensino Médio no Sesi e fazendo o curdo de Informatica para Internet no Senai.</p>
+async function logout() {
+    await supabaseClient.auth.signOut();
+    window.location.href = "index.html";
+}
 
-            <h3>Objetivos</h3>
-            <p>Apresentar as atividades desenvolvidas nesse ano de 2025, mostrando assim meus conhecimentos adquiridos e desenvolvidos nesse</p>
-            <p>período. Desenvolver minhas habilidades de autonomia e tomada de decisões, tanto na área pessoal quanto na profissional.</p>
-
-            <h3>Projetos</h3>
-            <p>Atualmente estou no 3º série do Ensino Médio e cursando Tecnologia da Informação para Internet no Senai. Pretendo chegar na</p>
-            <p>profissão que almejo e goste, tendo um bom salário e me qualificando cada vez mais para me tornar uma boa profissional.</p>
-            <p>Quero começar uma nova rotina diária, foco, esforço e estudar constatemente.</p>
-=======
-    <title>Login</title>
-    <link rel="stylesheet" href="login.css">
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <style>
-        body { visibility: hidden; }
-    </style>
-</head>
-
-<body>
-    <div class="center">
-        <h1>Login</h1>
-
-        <form id="formLogin">
-            <div class="txt_field">
-                <input type="email" id="login" required>
-                <label>E-mail</label>
->>>>>>> 826ecb7bf5c1603bf586d3edcef17de56f0f7c65:index.html
-            </div>
-
-            <div class="txt_field">
-                <input type="password" id="senha" required>
-                <label>Senha</label>
-            </div>
-
-            <div class="pass">
-                Esqueceu a senha?
-            </div>
-
-            <div class="botoes">
-                <button type="submit" class="btn-conectar">Logar</button>
-            </div>
-
-            <div class="signup_link">
-                <a href="#">Não é membro? Cadastre-se!</a>
-            </div>
-        </form>
-    </div>
-
-<<<<<<< HEAD:portfolio.html
-    <script src="./script.js"></script>
-
-    <script>
-        const SUPABASE_URL = 'https://ijpqshxedkgewdxorwxi.supabase.co';
-        const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcHFzaHhlZGtnZXdkeG9yd3hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODgxNzQsImV4cCI6MjEwNTg2NDE3NH0.0gJjTgON2u_SlvCT2o8QP9eozrHKRmAquUscqQDSJH8';
-
-        const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
-
-        async function verificarAutenticacao() {
-            const { data: { session } } = await supabaseClient.auth.getSession();
-
-            if (!session) {
-                // Se NÃO estiver logado, manda de volta pro index.html (Login)
-                window.location.replace("index.html");
-            } else {
-                document.body.style.display = "block";
-            }
-        }
-
-        async function logout() {
-            await supabaseClient.auth.signOut();
-            window.location.replace("index.html");
-        }
-
-        verificarAutenticacao();
-    </script>
-=======
-    <script src="login.js"></script>
->>>>>>> 826ecb7bf5c1603bf586d3edcef17de56f0f7c65:index.html
-</body>
-</html>
+verificarAutenticacao();
