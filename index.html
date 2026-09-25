@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="login.css">
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <style>
+        /* Estilos de emergência para garantir a exibição do login */
+        body {
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .center {
+            background: #1e1e1e;
+            padding: 30px 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            width: 300px;
+            text-align: center;
+        }
+
+        .center h1 {
+            margin-bottom: 20px;
+            color: #ffffff;
+        }
+
+        .txt_field {
+            position: relative;
+            margin: 20px 0;
+            text-align: left;
+        }
+
+        .txt_field input {
+            width: 100%;
+            padding: 10px;
+            background: #2b2b2b;
+            border: 1px solid #444;
+            color: #fff;
+            border-radius: 5px;
+            box-sizing: border-box;
+        }
+
+        .txt_field label {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 14px;
+            color: #aaa;
+        }
+
+        .btn-conectar {
+            width: 100%;
+            padding: 10px;
+            background-color: #8b0000;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-weight: bold;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+
+        .btn-conectar:hover {
+            background-color: #a00000;
+        }
+
+        .pass, .signup_link {
+            margin-top: 15px;
+            font-size: 12px;
+            color: #aaa;
+        }
+
+        .signup_link a {
+            color: #ff4d4d;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="center">
+        <h1>Login</h1>
+
+        <form id="formLogin">
+            <div class="txt_field">
+                <label for="login">E-mail</label>
+                <input type="email" id="login" required>
+            </div>
+
+            <div class="txt_field">
+                <label for="senha">Senha</label>
+                <input type="password" id="senha" required>
+            </div>
+
+            <div class="pass">
+                Esqueceu a senha?
+            </div>
+
+            <div class="botoes">
+                <button type="submit" class="btn-conectar">Logar</button>
+            </div>
+
+            <div class="signup_link">
+                <a href="#">Não é membro? Cadastre-se!</a>
+            </div>
+        </form>
+    </div>
+
+    <script src="login.js"></script>
+</body>
+</html>
