@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Meu Portfólio</title>
     
-    <!-- Importação da biblioteca Supabase -->
+    <!-- SDK do Supabase essencial no head -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
     <style>
@@ -15,7 +15,7 @@
             padding: 0;
         }
         body {
-            display: none; /* Esconde a página até validar o login no Supabase */
+            display: none; /* Mantém oculto até validar o login no Supabase */
             background-color: #121212;
             color: #ffffff;
             font-family: Arial, sans-serif;
@@ -59,7 +59,7 @@
         </section>
     </main>
 
-    <!-- Tag <script> obrigatória para executar o código JavaScript -->
+    <!-- O CÓDIGO JAVASCRIPT DEVE FICAR OBRIGATORIAMENTE DENTRO DA TAG SCRIPT -->
     <script>
         const SUPABASE_URL = 'https://ijpqshxedkgewdxorwxi.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcHFzaHhlZGtnZXdkeG9yd3hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODgxNzQsImV4cCI6MjEwNTg2NDE3NH0.0gJjTgON2u_SlvCT2o8QP9eozrHKRmAquUscqQDSJH8';
