@@ -4,11 +4,13 @@ const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZ
 const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
 async function checarSessao() {
-    const { data: { session } } = await supabaseClient.auth.getSession();
-    if (session) {
-        window.location.replace("portfolio.html");
-    } else {
-        document.body.style.visibility = "visible";
+    try {
+        const { data: { session } } = await supabaseClient.auth.getSession();
+        if (session) {
+            window.location.replace("portfolio.html");
+        }
+    } catch (err) {
+        console.error("Erro ao checar sessão:", err);
     }
 }
 
