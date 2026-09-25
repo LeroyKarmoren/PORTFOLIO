@@ -7,7 +7,6 @@
     <title>KAREN</title>
     <link rel="icon" href="img/bloodborne.jpg">
 
-    <!-- Supabase SDK -->
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <style>
         body { display: none; }
@@ -76,7 +75,6 @@
 
     <script src="./script.js"></script>
 
-    <!-- Verificação de Autenticação -->
     <script>
         const SUPABASE_URL = 'https://ijpqshxedkgewdxorwxi.supabase.co';
         const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImlqcHFzaHhlZGtnZXdkeG9yd3hpIiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAyODgxNzQsImV4cCI6MjEwNTg2NDE3NH0.0gJjTgON2u_SlvCT2o8QP9eozrHKRmAquUscqQDSJH8';
@@ -87,6 +85,7 @@
             const { data: { session } } = await supabaseClient.auth.getSession();
 
             if (!session) {
+                // Se NÃO estiver logado, manda de volta pro index.html (Login)
                 window.location.replace("index.html");
             } else {
                 document.body.style.display = "block";
