@@ -11,19 +11,14 @@
             margin: 0;
             padding: 0;
         }
-        html, body {
-            background-color: #121212 !important;
-            color: #ffffff !important;
-            font-family: Arial, sans-serif;
-            min-height: 100vh;
-            width: 100vw;
-        }
         body {
-            display: flex !important;
-            justify-content: center !important;
-            align-items: center !important;
-            visibility: visible !important;
-            opacity: 1 !important;
+            background-color: #121212;
+            color: #ffffff;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
         }
         .login-card {
             background: #1e1e1e;
@@ -32,7 +27,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
             width: 320px;
             text-align: center;
-            z-index: 9999;
         }
         .login-card h1 {
             margin-bottom: 20px;
@@ -72,7 +66,7 @@
         }
     </style>
 </head>
-<body style="display: flex !important; visibility: visible !important;">
+<body>
 
     <div class="login-card">
         <h1>Login</h1>
@@ -95,6 +89,7 @@
 
         const supabaseClient = window.supabase.createClient(SUPABASE_URL, SUPABASE_KEY);
 
+        // Apenas processa ao submeter o formulário (Sem verificacoes automaticas ao abrir a pagina)
         document.getElementById('formLogin').addEventListener('submit', async (e) => {
             e.preventDefault();
 
@@ -109,7 +104,7 @@
             if (error) {
                 alert('Erro ao fazer login: ' + error.message);
             } else {
-                window.location.replace("portfolio.html");
+                window.location.href = "portfolio.html";
             }
         });
     </script>
